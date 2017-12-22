@@ -1,18 +1,12 @@
 import React, { Component } from 'react';
 import Header from './containers/Header';
-import { Route, Switch} from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Questions from './containers/Questions';
+import Assessment from './containers/Assessment';
 import Home from './containers/Home';
-import CommonHeader from './components/CommonHeader';
-
 import './App.css';
 
 class App extends Component {
-  shouldComponentUpdate(){
-    console.log(222);
-    return true;
-  }
 
   render() {
     return (
@@ -20,10 +14,12 @@ class App extends Component {
         <Header />
         <main>
           <section className="content container">
-            <Switch>
-              <Route path="/assessment" component={Questions} />
-              <Route path="/" component={Home} />
-            </Switch>
+            <BrowserRouter>
+              <Switch>
+                <Route path="/assessment" component={Assessment} />
+                <Route path="/" component={Home} />
+              </Switch>
+            </BrowserRouter>
           </section>
         </main>
       </div>
@@ -34,7 +30,7 @@ class App extends Component {
 function mapStateToProps({userName}) {
   return {
     userName
-  }
+  };
 }
 
 export default connect(mapStateToProps)(App);

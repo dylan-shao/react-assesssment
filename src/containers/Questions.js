@@ -1,18 +1,30 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import Choices from '../components/Choices';
 
 
 class Questions extends Component {
-	componentDidMount() {
+
+	shouldComponentUpdate(nextProps, nextStates){
+		return this.props.questionId !== nextProps.questionId;
 	}
 
 	render() {
-		return (
-			<div className="questions">
-				questions
-			</div>
-		);
+		const { content, choices } = this.props;
+		if(content && choices){
+			return (
+				<div className="questions clear-both">
+					<div >{this.props.content}</div>
+			        <Choices choices={this.props.choices} />
+				</div>
+			);
+		} else {
+			return (
+				<div>Loading</div>
+			);
+		}
+		
 	}
 }
+
 
 export default Questions;

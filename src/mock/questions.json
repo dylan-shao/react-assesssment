@@ -3,31 +3,27 @@
 		"id": 1,
 		"content": "How Far is Earth from the Sun?",
 		"choices": [{
-			"id": 1001,
+			"cid": 1001,
 			"content": "1 miles",
 			"points": 1
 		},{
-			"id": 1002,
+			"cid": 1002,
 			"content": "92,955,807 miles",
 			"point": 3
-		},{
-			"id": 1002,
-			"content": "Same as from Sun to Earth",
-			"point": 2
 		}]
 	}, {
 		"id": 2,
 		"content": "What is the closest planet to the Sun?",
 		"choices": [{
-			"id": 2001,
+			"cid": 2001,
 			"content": "Mercury",
 			"points": 3
 		},{
-			"id": 2002,
+			"cid": 2002,
 			"content": "Earth",
 			"point": 1
 		},{
-			"id": 2003,
+			"cid": 2003,
 			"content": "Planet fitness",
 			"point": 2
 		}]
@@ -35,15 +31,15 @@
 		"id": 3,
 		"content": "What is the hottest planet in our solar system?",
 		"choices": [{
-			"id": 3001,
+			"cid": 3001,
 			"content": "Sun",
 			"points": 1
 		},{
-			"id": 3002,
+			"cid": 3002,
 			"content": "Venus",
 			"point": 3
 		},{
-			"id": 3002,
+			"cid": 3003,
 			"content": "Earth",
 			"point": 2
 		}]
@@ -51,15 +47,15 @@
 		"id": 4,
 		"content": "Is the sun a star or a planet??",
 		"choices": [{
-			"id": 4001,
+			"cid": 4001,
 			"content": " A star",
 			"points": 3
 		},{
-			"id": 4002,
+			"cid": 4002,
 			"content": "A planet",
 			"point": 1
 		},{
-			"id": 4002,
+			"cid": 4003,
 			"content": "It's sunshine",
 			"point": 2
 		}]
@@ -67,15 +63,15 @@
 		"id": 5,
 		"content": "Who was the first person to walk on the moon?",
 		"choices": [{
-			"id": 5001,
+			"cid": 5001,
 			"content": "Michael Collins",
 			"points": 2
 		},{
-			"id": 5002,
+			"cid": 5002,
 			"content": "Neil Armstrong",
 			"point": 3
 		},{
-			"id": 5002,
+			"cid": 5003,
 			"content": "Aliens",
 			"point": 1
 		}]

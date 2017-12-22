@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
+import { withRouter } from 'react-router'
 import  { connect } from 'react-redux';
-import { saveUser } from '../actions/index';
+import { getUserName } from '../store/actions';
 
 class Home extends Component {
 
-	onFormSubmit(event){
-		event.preventDefault();
-		this.props.saveUser(event.target.username.value);
-		<Redirect to="/assessment"/>
+	onFormSubmit = (e) => {
+		e.preventDefault();
+		this.props.getUserName(e.target.username.value);
+		this.props.history.push('/assessment');
 	}
 
 	render(){
 		return (
 			<div className="home">
+				<h2>Please login to continue</h2>
 				<form className="input-group" onSubmit={(e)=>this.onFormSubmit(e)}>
 					<input 
 						name="username"
@@ -31,7 +32,7 @@ class Home extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-	return bindActionCreators({saveUser}, dispatch);
+	return bindActionCreators({getUserName}, dispatch);
 }
 
-export default connect(null, mapDispatchToProps)(Home);
+export default withRouter(connect(null, mapDispatchToProps)(Home));

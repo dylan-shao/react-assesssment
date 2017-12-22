@@ -10,14 +10,9 @@ class Header extends Component {
 			headerMessage: 'Welcome'
 		};
 	}
-	componentDidMount(){
-		console.log('did mount');
-	}
-	componentWillReceiveProps() {
-		console.log(333);
-	}
+
 	shouldComponentUpdate(){
-		console.log(1111);
+		//todo check the 
 		return true;
 	}
 
@@ -28,7 +23,7 @@ class Header extends Component {
 	}
 }
 
-function mapStateToProps({ header }) {
+function mapStateToProps({ header, questions }) {
 	return {
 		userName: header.userName
 	};
