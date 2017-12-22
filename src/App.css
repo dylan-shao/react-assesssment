@@ -1,8 +1,7 @@
  * {
   box-sizing: border-box;
   font-family: 'Source Sans Pro', sans-serif;
-  font-weight: bold;
-  font-size: 14pt;
+  font-size: 12pt;
 }
 
 
@@ -19,17 +18,30 @@ body {
 
 .common-header {
   text-align: center;
-  padding-top: 30px;
-  padding-bottom: 40px;
+  padding-top: 10px;
+  padding-bottom: 20px;
 }
 
 .home, .questions {
   box-sizing: border-box;
   background-color: whitesmoke;
-  width: 80%;
+  width: 80vw;
+  height: 60vh;
   text-align: center;
   margin: 20px auto;
   padding: 60px;
   border-radius: 6px;
   box-shadow: 1px 1px 1px 0 #888888;
+}
+
+.input-group {
+  margin: 20px 0px;
+}
+
+.form-control {
+  width: 60%;
+}
+
+.btn {
+  margin: 10px;
 }

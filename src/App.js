@@ -12,7 +12,7 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <CommonHeader />
+        <Header />
         <main>
           <section className="content container">
             <Switch>

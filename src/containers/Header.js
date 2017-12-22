@@ -5,6 +5,7 @@ import CommonHeader from '../components/CommonHeader';
 
 class Header extends Component {
 	shouldComponentUpdate(){
+		console.log(1111);
 		return true;
 	}
 
@@ -19,7 +20,7 @@ class Header extends Component {
 
 function mapStateToProps(state) {
 	return {
-		
+		userName: state.userName
 	};
 }
 
