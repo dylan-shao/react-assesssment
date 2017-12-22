@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 
 class Questions extends Component {
 	componentDidMount() {
-		this.props.fetchQuestions();
 	}
 
 	render() {

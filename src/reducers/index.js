@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import reducerHeader from './reducerHeader';
 
 const rootReducer = combineReducers({
-    reducerHeader
+    header: reducerHeader
 });
 
 export default rootReducer;

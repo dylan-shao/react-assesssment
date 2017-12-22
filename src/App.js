@@ -2,12 +2,17 @@ import React, { Component } from 'react';
 import Header from './containers/Header';
 import { Route, Switch} from 'react-router-dom';
 import { connect } from 'react-redux';
-import CommonHeader from './components/CommonHeader';
 import Questions from './containers/Questions';
 import Home from './containers/Home';
+import CommonHeader from './components/CommonHeader';
+
 import './App.css';
 
 class App extends Component {
+  shouldComponentUpdate(){
+    console.log(222);
+    return true;
+  }
 
   render() {
     return (
@@ -26,11 +31,10 @@ class App extends Component {
   }
 }
 
-function mapStateToProps({headerMessage, userName}) {
+function mapStateToProps({userName}) {
   return {
-    headerMessage,
     userName
   }
 }
 
-export default connect(mapStateToProps, null)(App);
+export default connect(mapStateToProps)(App);
