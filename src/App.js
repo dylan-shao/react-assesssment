@@ -13,10 +13,14 @@ class App extends Component {
     return (
       <div className="app">
         <CommonHeader />
-        <Switch>
-          <Route path="/assessment" component={Questions} />
-          <Route path="/" component={Home} />
-        </Switch>
+        <main>
+          <section className="content container">
+            <Switch>
+              <Route path="/assessment" component={Questions} />
+              <Route path="/" component={Home} />
+            </Switch>
+          </section>
+        </main>
       </div>
     );
   }
