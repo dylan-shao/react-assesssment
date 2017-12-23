@@ -66,8 +66,8 @@ class Assessment extends Component {
 				<div className="assessment">
 					<Steps step={index} totalSteps={questions.length}/>
 					<div className="clear-right">
-						<PrevNext clickHandler={this.prevClickHandler} type="prev" value="<-"/>
-						<PrevNext clickHandler={this.nextClickHandler} type="next" value="->"/>
+						<PrevNext clickHandler={this.prevClickHandler} type="prev" value="<--"/>
+						<PrevNext clickHandler={this.nextClickHandler} type="next" value="-->"/>
 					</div>
 					<Questions questionId={id} content={content} choices={choices} focusId={focusId}/>
 				</div>

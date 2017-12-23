@@ -89,6 +89,12 @@ body {
   float:right;
 }
 
+.prev, .next {
+  background-color: #3CB371;
+  height: 30px;
+  width: 50px;
+}
+
 .clear-right {
   clear: right;
 }
