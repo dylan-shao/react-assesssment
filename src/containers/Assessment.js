@@ -26,16 +26,11 @@ class Assessment extends Component {
 		this.setState({questions});
 	}
 
-	// shouldComponentUpdate(nextProps, nextState){
-	// 	return nextState.questions.length > 0;
-	// }
-
-	componentWillUnmount(){
-		console.log(2);
+	shouldComponentUpdate(nextProps, nextState){
+		return nextState.questions.length > 0;
 	}
 
 	handleFocus = (index) => {
-		console.log(this.props.points);
 		const id = this.state.questions[index].id;
 		const pointsObj = this.props.points[id];
 		if(pointsObj) {
