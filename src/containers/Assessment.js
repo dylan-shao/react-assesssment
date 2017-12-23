@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router'
 import { fetchQuestions } from '../store/actions';
 import Questions from './Questions';
 import PrevNext from '../components/PrevNext';
@@ -29,6 +30,10 @@ class Assessment extends Component {
 		return nextState.questions.length > 0;
 	}
 
+	componentWillUnmount(){
+		console.log(2);
+	}
+
 	handleFocus = (index) => {
 		console.log(this.props.points);
 		const id = this.state.questions[index].id;
@@ -48,9 +53,13 @@ class Assessment extends Component {
 
 	nextClickHandler = () => {
 		const { index, questions } = this.state;
-		const nextIndex = Math.min(index + 1, questions.length - 1);
+		const maxIndex = questions.length - 1;
+		const nextIndex = Math.min(index + 1, maxIndex);
 		this.setState({index: nextIndex});
 		this.handleFocus(nextIndex);
+		if(index === maxIndex) {
+			this.props.history.push('/result');
+		}
 	}
 
 	render() {
@@ -69,7 +78,7 @@ class Assessment extends Component {
 				</div>
 			);
 		} else {
-			return (<div>Loading...</div>);
+			return (<div className="assessment">Loading...</div>);
 		}
 	}
 }
@@ -82,4 +91,4 @@ function mapDispatchToProps(dispatch) {
 	return bindActionCreators({fetchQuestions}, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Assessment);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Assessment));
