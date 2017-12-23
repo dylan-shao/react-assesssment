@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router'
 import { connect } from 'react-redux';
 import { getUserName } from '../store/actions';
+import LoginForm from '../components/LoginForm';
 
 class Home extends Component {
 
@@ -15,17 +16,7 @@ class Home extends Component {
 	render(){
 		return (
 			<div className="home">
-				<h2>Please login to continue</h2>
-				<form className="input-group" onSubmit={(e)=>this.onFormSubmit(e)}>
-					<input 
-						name="username"
-						placeholder="Username"
-						className="form-control"
-					/>
-					<span>
-						<button type="submit" className="btn">Login</button>
-					</span>
-				</form>
+				<LoginForm onFormSubmit={this.onFormSubmit} />
 			</div>
 		);
 	}

@@ -21,6 +21,7 @@ class Questions extends Component {
 
 	render() {
 		const { questionId, content, choices } = this.props;
+		
 		if(content && choices){
 			return (
 				<div className="questions clear-both">
@@ -33,7 +34,6 @@ class Questions extends Component {
 				<div>Loading</div>
 			);
 		}
-		
 	}
 }
 
