@@ -29,14 +29,19 @@ class Assessment extends Component {
 		return nextState.questions.length > 0;
 	}
 
+	handleFocus = () => {
+		console.log(this.props.points);
+	}
+
 	prevClickHandler = () => {
 		this.setState({index: Math.max(0, this.state.index - 1)});
-
+		this.handleFocus();
 	}
 
 	nextClickHandler = () => {
 		const { index, questions } = this.state;
 		this.setState({index: Math.min(index + 1, questions.length - 1)});
+		this.handleFocus();
 	}
 
 	render() {
@@ -55,13 +60,13 @@ class Assessment extends Component {
 				</div>
 			);
 		} else {
-			return (<div>Loading</div>);
+			return (<div>Loading...</div>);
 		}
 	}
 }
 
-function mapStateToProps({questions}) {
-  return { questions };
+function mapStateToProps({questions, points}) {
+  return { questions, points };
 }
 
 function mapDispatchToProps(dispatch) {

@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import Choices from '../components/Choices';
+import { saveQuestionPoint } from '../store/actions';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
 
 class Questions extends Component {
@@ -8,13 +11,17 @@ class Questions extends Component {
 		return this.props.questionId !== nextProps.questionId;
 	}
 
+	clickHandler = (obj) => {
+		this.props.saveQuestionPoint(obj);
+	}
+
 	render() {
-		const { content, choices } = this.props;
+		const { questionId, content, choices } = this.props;
 		if(content && choices){
 			return (
 				<div className="questions clear-both">
-					<div >{this.props.content}</div>
-			        <Choices choices={this.props.choices} />
+					<h2 className="question-content">{content}</h2>
+			        <Choices questionId={questionId} choices={choices} clickHandler={this.clickHandler}/>
 				</div>
 			);
 		} else {
@@ -26,5 +33,7 @@ class Questions extends Component {
 	}
 }
 
-
-export default Questions;
+function mapDispatchToProps(dispatch) {
+	return bindActionCreators({saveQuestionPoint}, dispatch);
+}
+export default connect(null, mapDispatchToProps)(Questions);

@@ -6,7 +6,7 @@
 
 
 body {
-  background-color: lightgray;
+  background-color: Silver;
   margin: auto;
   padding: auto;
   width: 100%;
@@ -46,9 +46,6 @@ body {
   margin: 10px;
 }
 
-ul {
-  list-style-type: none;
-}
 .choices button {
   color: gray;
   padding: 20px;
@@ -64,10 +61,19 @@ ul {
   background: linear-gradient(whitesmoke, lightgray); /* Standard syntax */
 }
 
+.questions {
+  margin: 70px;
+}
+
+.question-content {
+  font-size: 16pt;
+}
+
 .choices li {
   text-align: center;
   display: inline-block;
   margin: 20px;
+  list-style-type: none;
 }
 
 .prev {

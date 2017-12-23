@@ -9,7 +9,7 @@
 		},{
 			"cid": 1002,
 			"content": "92,955,807 miles",
-			"point": 3
+			"points": 3
 		}]
 	}, {
 		"id": 2,
@@ -21,11 +21,11 @@
 		},{
 			"cid": 2002,
 			"content": "Earth",
-			"point": 1
+			"points": 1
 		},{
 			"cid": 2003,
 			"content": "Planet fitness",
-			"point": 2
+			"points": 2
 		}]
 	}, {
 		"id": 3,
@@ -37,11 +37,11 @@
 		},{
 			"cid": 3002,
 			"content": "Venus",
-			"point": 3
+			"points": 3
 		},{
 			"cid": 3003,
 			"content": "Earth",
-			"point": 2
+			"points": 2
 		}]
 	}, {
 		"id": 4,
@@ -53,11 +53,11 @@
 		},{
 			"cid": 4002,
 			"content": "A planet",
-			"point": 1
+			"points": 1
 		},{
 			"cid": 4003,
 			"content": "It's sunshine",
-			"point": 2
+			"points": 2
 		}]
 	}, {
 		"id": 5,
@@ -69,11 +69,11 @@
 		},{
 			"cid": 5002,
 			"content": "Neil Armstrong",
-			"point": 3
+			"points": 3
 		},{
 			"cid": 5003,
 			"content": "Aliens",
-			"point": 1
+			"points": 1
 		}]
 	}]
 }

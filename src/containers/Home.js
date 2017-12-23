@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router'
-import  { connect } from 'react-redux';
+import { connect } from 'react-redux';
 import { getUserName } from '../store/actions';
 
 class Home extends Component {
