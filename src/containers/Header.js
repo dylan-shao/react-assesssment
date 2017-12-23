@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CommonHeader from '../components/CommonHeader';
 
-
 class Header extends Component {
 	constructor(props){
 		super(props);
@@ -23,7 +22,7 @@ class Header extends Component {
 	}
 }
 
-function mapStateToProps({ header, questions }) {
+function mapStateToProps({ header }) {
 	return {
 		userName: header.userName
 	};

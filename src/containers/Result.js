@@ -14,7 +14,6 @@ class Result extends Component {
 			score = Object.values(points).reduce((a,b)=> a+b.points, 0);
 		}
 
-
 		return `You answered ${keys.length}/${questions.length} questions, your score is ${score}/${totalPoints}`;
 	}
 
@@ -33,7 +32,5 @@ class Result extends Component {
 function mapStateToProps({ points, questions }) {
 	return { points, questions };
 }
-
-
 
 export default withRouter(connect(mapStateToProps)(Result));

@@ -5,7 +5,7 @@ export default function(state = {}, action) {
     switch (action.type) {
     	case QUESTION_POINT:
     		return {...state, [payload.id]: {points: payload.points, cid: payload.cid} };
-        default:
-            return state;
+      default:
+        return state;
     }
 }

@@ -4,7 +4,6 @@ import { saveQuestionPoint } from '../store/actions';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-
 class Questions extends Component {
 
 	shouldComponentUpdate(nextProps, nextStates){

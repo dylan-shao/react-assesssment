@@ -26,9 +26,9 @@ class Assessment extends Component {
 		this.setState({questions});
 	}
 
-	shouldComponentUpdate(nextProps, nextState){
-		return nextState.questions.length > 0;
-	}
+	// shouldComponentUpdate(nextProps, nextState){
+	// 	return nextState.questions.length > 0;
+	// }
 
 	componentWillUnmount(){
 		console.log(2);

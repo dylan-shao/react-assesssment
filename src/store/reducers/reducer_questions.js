@@ -4,7 +4,7 @@ export default function(state = [], action) {
     switch (action.type) {
     	case FETCH_QUESTIONS:
     		return action.payload.questions;
-        default:
-            return state;
+      default:
+        return state;
     }
 }
