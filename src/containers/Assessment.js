@@ -7,7 +7,6 @@ import Questions from './Questions';
 import PrevNext from '../components/PrevNext';
 import Steps from '../components/Steps';
 
-
 class Assessment extends Component {
 	constructor(){
 		super();

@@ -23,7 +23,7 @@ class Home extends Component {
 						className="form-control"
 					/>
 					<span>
-						<button type="submit" className="btn">Submit</button>
+						<button type="submit" className="btn">Login</button>
 					</span>
 				</form>
 			</div>

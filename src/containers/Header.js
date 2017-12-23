@@ -2,17 +2,17 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CommonHeader from '../components/CommonHeader';
 
+/**
+ * this can be just a stateless component,
+ * using a container component here is easy to add 
+ * more features to Header component
+ **/
 class Header extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
 			headerMessage: 'Welcome'
 		};
-	}
-
-	shouldComponentUpdate(){
-		//todo check the 
-		return true;
 	}
 
 	render() {
