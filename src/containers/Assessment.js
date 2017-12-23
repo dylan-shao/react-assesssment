@@ -29,23 +29,32 @@ class Assessment extends Component {
 		return nextState.questions.length > 0;
 	}
 
-	handleFocus = () => {
+	handleFocus = (index) => {
 		console.log(this.props.points);
+		const id = this.state.questions[index].id;
+		const pointsObj = this.props.points[id];
+		if(pointsObj) {
+			this.setState({focusId: `choice-${pointsObj.cid}`});
+		}else {
+			this.setState({focusId: void 0});
+		}
 	}
 
 	prevClickHandler = () => {
-		this.setState({index: Math.max(0, this.state.index - 1)});
-		this.handleFocus();
+		const prevIndex = Math.max(0, this.state.index - 1);
+		this.setState({index: prevIndex});
+		this.handleFocus(prevIndex);
 	}
 
 	nextClickHandler = () => {
 		const { index, questions } = this.state;
-		this.setState({index: Math.min(index + 1, questions.length - 1)});
-		this.handleFocus();
+		const nextIndex = Math.min(index + 1, questions.length - 1);
+		this.setState({index: nextIndex});
+		this.handleFocus(nextIndex);
 	}
 
 	render() {
-		const { questions, index } = this.state;
+		const { questions, index, focusId } = this.state;
 		const { content, choices, id } = questions[index] || {};
 
 		if(questions.length>0) {
@@ -56,7 +65,7 @@ class Assessment extends Component {
 						<PrevNext clickHandler={this.prevClickHandler} type="prev" value="<-"/>
 						<PrevNext clickHandler={this.nextClickHandler} type="next" value="->"/>
 					</div>
-					<Questions questionId={id} content={content} choices={choices}/>
+					<Questions questionId={id} content={content} choices={choices} focusId={focusId}/>
 				</div>
 			);
 		} else {

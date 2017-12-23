@@ -39,11 +39,16 @@ body {
 }
 
 .form-control {
-  width: 60%;
+  width: 30%;
 }
 
 .btn {
   margin: 10px;
+}
+
+.btn-item:focus {
+  outline: none;
+  border: 3px solid green;
 }
 
 .choices button {

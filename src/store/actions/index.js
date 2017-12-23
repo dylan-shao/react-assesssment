@@ -40,7 +40,8 @@ export const  saveQuestionPoint = (obj) =>{
   return{
       type: QUESTION_POINT,
       payload: {id: id,
-      	points: choice.points
+      	points: choice.points,
+      	cid: choice.cid
       }
   };
 };

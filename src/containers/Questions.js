@@ -11,6 +11,11 @@ class Questions extends Component {
 		return this.props.questionId !== nextProps.questionId;
 	}
 
+	componentDidUpdate() {
+		const el = document.getElementById(this.props.focusId);
+		el && el.focus();
+	}
+
 	clickHandler = (obj) => {
 		this.props.saveQuestionPoint(obj);
 	}

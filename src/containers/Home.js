@@ -19,7 +19,7 @@ class Home extends Component {
 				<form className="input-group" onSubmit={(e)=>this.onFormSubmit(e)}>
 					<input 
 						name="username"
-						placeholder="Input your name to get started"
+						placeholder="Username"
 						className="form-control"
 					/>
 					<span>

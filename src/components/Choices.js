@@ -5,7 +5,7 @@ const Choices = (props) => {
 		return (
 			<li key={choice.cid}>
 				<button 
-					id={choice.cid} 
+					id={"choice-"+choice.cid} 
 					className="btn-item" 
 					onClick={props.clickHandler.bind(null, [props.questionId, choice])}>
 					{choice.content}
