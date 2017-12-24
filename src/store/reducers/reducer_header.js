@@ -1,8 +1,8 @@
 import { USERNAME, CLEAR_DATA } from '../actions';
 
-const initialState={
+const initialState = {
   userName: '',
-}
+};
 
 export default function (state = initialState, action) {
   switch (action.type) {

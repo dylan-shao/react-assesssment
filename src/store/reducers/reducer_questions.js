@@ -1,10 +1,9 @@
 import { FETCH_QUESTIONS, CURRENT_INDEX, FOCUS_ID, INDEX } from '../actions';
 
-const initialState={
-  questions: [],
+const initialState = {
   index: -1,
-  focusId: 0,
-}
+  focusId: '',
+};
 
 export default function (state = initialState, action) {
   const { payload } = action;

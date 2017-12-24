@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import CommonHeader from '../components/CommonHeader';
 
 /**
  * this can be just a stateless component,
  * using a container component here is easy to add
- * more features to Header component
+ * more features to Header
  */
 class Header extends Component {
   constructor(props) {
@@ -21,6 +22,14 @@ class Header extends Component {
     );
   }
 }
+
+Header.defaultProps = {
+  userName: '',
+};
+
+Header.propTypes = {
+  userName: PropTypes.string,
+};
 
 function mapStateToProps({ header }) {
   return {

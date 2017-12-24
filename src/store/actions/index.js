@@ -6,7 +6,7 @@ export const QUESTION_POINTS = 'QUESTION_POINTS';
 export const CURRENT_INDEX = 'CURRENT_INDEX';
 export const CLEAR_DATA = 'CLEAR_DATA';
 export const FOCUS_ID = 'FOCUS_ID';
-export const INDEX = "INDEX";
+export const INDEX = 'INDEX';
 
 export function getUserName(name) {
   return {
@@ -21,13 +21,6 @@ export function fetchQuestions() {
     payload: questions,
   };
 }
-
-// export function initFocusId() {
-//   return {
-//     type: FOCUS_ID,
-//     payload: 0,
-//   };
-// }
 
 export function initIndex() {
   return {
@@ -62,9 +55,9 @@ export function clearData() {
   };
 }
 
-export function toogleCurrentIndex(index) {
+export function toggleCurrentIndex(index) {
   return {
     type: CURRENT_INDEX,
     payload: index,
-  }
+  };
 }

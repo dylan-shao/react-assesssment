@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const ScoreResult = ({ points, questions, maxScore }) => {
   const renderResult = () => {
@@ -18,6 +19,17 @@ const ScoreResult = ({ points, questions, maxScore }) => {
       {renderResult()}
     </div>
   );
+};
+
+ScoreResult.defaultProps = {
+  points: {},
+  questions: [],
+};
+
+ScoreResult.propTypes = {
+  points: PropTypes.objectOf(PropTypes.object),
+  questions: PropTypes.arrayOf(PropTypes.object),
+  maxScore: PropTypes.number.isRequired,
 };
 
 export default ScoreResult;

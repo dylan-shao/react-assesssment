@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import Choices from '../components/Choices';
 import { saveQuestionPoint } from '../store/actions';
 
@@ -34,6 +35,18 @@ class Questions extends Component {
     );
   }
 }
+
+Questions.defaultProps = {
+  focusId: '',
+};
+
+Questions.propTypes = {
+  questionId: PropTypes.number.isRequired,
+  focusId: PropTypes.string,
+  saveQuestionPoint: PropTypes.func.isRequired,
+  content: PropTypes.string.isRequired,
+  choices: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({ saveQuestionPoint }, dispatch);

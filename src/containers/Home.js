@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { getUserName, clearData } from '../store/actions';
 import LoginForm from '../components/LoginForm';
 
@@ -23,6 +24,11 @@ class Home extends Component {
     );
   }
 }
+
+Home.propTypes = {
+  clearData: PropTypes.func.isRequired,
+  getUserName: PropTypes.func.isRequired,
+};
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({ getUserName, clearData }, dispatch);

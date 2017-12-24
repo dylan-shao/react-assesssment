@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const LoginForm = props => (
   <div className="login-form">
@@ -15,5 +16,9 @@ const LoginForm = props => (
     </form>
   </div>
 );
+
+LoginForm.propTypes = {
+  onFormSubmit: PropTypes.func.isRequired,
+};
 
 export default LoginForm;

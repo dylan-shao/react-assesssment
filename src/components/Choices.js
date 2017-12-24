@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Choices = ({ clickHandler, questionId, choices }) => {
   const bindClick = (id, select) => (clickHandler.bind(null, [id, select]));
@@ -18,6 +19,12 @@ const Choices = ({ clickHandler, questionId, choices }) => {
       <ul>{choices.map(renderChoices)}</ul>
     </div>
   );
+};
+
+Choices.propTypes = {
+  clickHandler: PropTypes.func.isRequired,
+  questionId: PropTypes.number.isRequired,
+  choices: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default Choices;

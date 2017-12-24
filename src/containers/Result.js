@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import ScoreResult from '../components/ScoreResult';
 
 class Result extends Component {
-  componentDidMount() {
-    console.log(222);
-  }
-  
   render() {
     return (
       <div className="result">
@@ -20,10 +17,20 @@ class Result extends Component {
   }
 }
 
+Result.defaultProps = {
+  questions: [],
+  points: {},
+};
+
+Result.propTypes = {
+  questions: PropTypes.arrayOf(PropTypes.object),
+  points: PropTypes.objectOf(PropTypes.object),
+};
+
 function mapStateToProps({ questions, points }) {
-  return { 
-  	questions: questions.questions, 
-    points, 
+  return {
+    questions: questions.questions,
+    points,
   };
 }
 
