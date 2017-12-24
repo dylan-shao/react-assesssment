@@ -1,8 +1,9 @@
 import React from 'react';
 
-const PrevNext = (props) => {
-	return (
-		<button className={props.type} onClick={props.clickHandler}>{props.value}</button>
-	);
-}
+const PrevNext = ({ type, clickHandler, value }) => (
+  <button className={type} onClick={clickHandler}>
+    {value}
+  </button>
+);
+
 export default PrevNext;
