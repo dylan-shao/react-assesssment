@@ -1,55 +1,45 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router';
-import { fetchQuestions } from '../store/actions';
+import PropTypes from 'prop-types';
+import { fetchQuestions,  toogleCurrentIndex, initIndex, setFocusId } from '../store/actions';
 import Questions from './Questions';
 import PrevNext from '../components/PrevNext';
 import Steps from '../components/Steps';
 
 class Assessment extends Component {
-  constructor() {
-    super();
-    this.state = {
-      index: 0,
-      questions: [],
-    };
-  }
 
   // simulate that the question is from the AJAX call
   componentDidMount() {
     this.props.fetchQuestions();
-  }
-
-  componentWillReceiveProps({ questions }) {
-    this.setState({ questions });
+    this.props.initIndex();
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    return nextState.questions.length > 0;
+    return this.props.index !== nextProps.index;
   }
 
   handleFocus = (index) => {
-    const { id } = this.state.questions[index];
-    const pointsObj = this.props.points[id];
+    const { id } = this.props.questions[index];
+    const pointsObj = this.props.points && this.props.points[id];
     if (pointsObj) {
-      this.setState({ focusId: `choice-${pointsObj.cid}` });
+      this.props.setFocusId(`choice-${pointsObj.cid}`);
     } else {
-      this.setState({ focusId: undefined });
+      this.props.setFocusId();
     }
   }
 
   prevClickHandler = () => {
-    const prevIndex = Math.max(0, this.state.index - 1);
-    this.setState({ index: prevIndex });
+    const prevIndex = Math.max(0, this.props.index - 1);
+    this.props.toogleCurrentIndex(prevIndex);
     this.handleFocus(prevIndex);
   }
 
   nextClickHandler = () => {
-    const { index, questions } = this.state;
+    const { questions, index } = this.props; 
     const maxIndex = questions.length - 1;
     const nextIndex = Math.min(index + 1, maxIndex);
-    this.setState({ index: nextIndex });
+    this.props.toogleCurrentIndex(nextIndex);
     this.handleFocus(nextIndex);
     if (index === maxIndex) {
       this.props.history.push('/result');
@@ -57,10 +47,9 @@ class Assessment extends Component {
   }
 
   render() {
-    const { questions, index, focusId } = this.state;
-    const { content, choices, id } = questions[index] || {};
-
-    if (questions.length > 0) {
+    const { index, focusId, questions } = this.props;
+    if (questions && questions.length > 0) {
+    	const { content, choices, id } = questions[index];
       return (
         <div className="assessment">
           <Steps step={index} totalSteps={questions.length} />
@@ -76,12 +65,30 @@ class Assessment extends Component {
   }
 }
 
+Assessment.propTypes = {
+  questions: PropTypes.arrayOf(PropTypes.object),
+  points: PropTypes.objectOf(PropTypes.object),
+}
+
 function mapStateToProps({ questions, points }) {
-  return { questions, points };
+  return { 
+  	questions: questions.questions, 
+    index: questions.index,
+    focusId: questions.focusId,
+    points, 
+  };
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchQuestions }, dispatch);
+  return bindActionCreators(
+    { 
+  	  fetchQuestions, 
+  	  toogleCurrentIndex,
+  	  initIndex,
+  	  setFocusId
+  	},
+  	dispatch
+  );
 }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Assessment));
+export default connect(mapStateToProps, mapDispatchToProps)(Assessment);

@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
-import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
-import { getUserName } from '../store/actions';
+import { getUserName, clearData } from '../store/actions';
 import LoginForm from '../components/LoginForm';
 
 class Home extends Component {
+  componentDidMount() {
+    this.props.clearData();
+  }
+
   onFormSubmit = (e) => {
     e.preventDefault();
     this.props.getUserName(e.target.username.value);
@@ -22,7 +25,7 @@ class Home extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ getUserName }, dispatch);
+  return bindActionCreators({ getUserName, clearData }, dispatch);
 }
 
-export default withRouter(connect(null, mapDispatchToProps)(Home));
+export default connect(null, mapDispatchToProps)(Home);

@@ -4,6 +4,10 @@ import { connect } from 'react-redux';
 import ScoreResult from '../components/ScoreResult';
 
 class Result extends Component {
+  componentDidMount() {
+    console.log(222);
+  }
+  
   render() {
     return (
       <div className="result">
@@ -16,8 +20,11 @@ class Result extends Component {
   }
 }
 
-function mapStateToProps({ points, questions }) {
-  return { points, questions };
+function mapStateToProps({ questions, points }) {
+  return { 
+  	questions: questions.questions, 
+    points, 
+  };
 }
 
 export default connect(mapStateToProps)(Result);

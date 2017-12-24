@@ -1,9 +1,15 @@
-import { USERNAME } from '../actions';
+import { USERNAME, CLEAR_DATA } from '../actions';
 
-export default function (state = {}, action) {
+const initialState={
+  userName: '',
+}
+
+export default function (state = initialState, action) {
   switch (action.type) {
     case USERNAME:
       return { ...state, userName: action.payload };
+    case CLEAR_DATA:
+      return { };
     default:
       return state;
   }
