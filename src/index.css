@@ -25,8 +25,8 @@ body {
 .home, .assessment, .result {
   box-sizing: border-box;
   background-color: whitesmoke;
-  width: 80vw;
-  height: 60vh;
+  width: 80%;
+  height: 80%;
   text-align: center;
   margin: 20px auto;
   padding: 60px;
@@ -48,6 +48,11 @@ body {
 
 .button-choosen {
   border: 3px solid green;
+}
+
+.choices ul {
+  list-style-type: none;
+  padding: 0;
 }
 
 .choices button {
@@ -103,3 +108,64 @@ body {
   clear: both;
 }
 
+
+
+/* media query*/
+
+@media screen and (max-width: 640px) {
+  .next, .question-steps {
+    font-size: 15px;
+  }
+
+  .question-content {
+    font-size: 15px;
+  }
+
+  .prev, .next {
+    height: 25px;
+    width: 40px;
+  }
+
+  .questions {
+    margin: 60px;
+  }
+
+  .choices button {
+    min-width: auto;
+    height: auto;
+    font-size: 1.0em;
+    border-radius: 3px;
+  }
+}
+
+@media screen and (max-width: 428px) {
+  .next, .question-steps {
+    font-size: 12px;
+  }
+  .question-content {
+    font-size: 12px;
+  }
+
+  .prev, .next {
+    height: 20px;
+    width: 30px;
+    font-size: 0.7em;
+  }
+
+  .choices li {
+    display: block;
+    margin: 5px auto;
+  }
+
+  .questions {
+    margin: 40px;
+  }
+
+  .choices button {
+    min-width: auto;
+    height: auto;
+    font-size: 0.8em;
+    text-align: center;
+    border-radius: 3px;
+  }
+}
