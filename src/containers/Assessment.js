@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { fetchQuestions, setCurrentIndex,
-  saveQuestionPoint } from '../store/actions';
+  saveQuestionPoint, setHeaderMsg } from '../store/actions';
 import Questions from '../components/Questions';
 import PrevNext from '../components/PrevNext';
 import Steps from '../components/Steps';
@@ -15,6 +15,7 @@ class Assessment extends Component {
       this.props.fetchQuestions();
     }
     this.props.setCurrentIndex(0);
+    this.props.setHeaderMsg('Welcome');
   }
 
   prevClickHandler = () => {
@@ -66,7 +67,7 @@ Assessment.defaultProps = {
   points: undefined,
 };
 
-// if you are reusing eslint-plugin-react:
+// if you are using eslint-plugin-react:
 // destructuring the propTypes will result eslint error in the console,
 // details can be found at https://github.com/yannickcr/eslint-plugin-react/issues/1389
 const { func, number, arrayOf, objectOf, object } = PropTypes;
@@ -78,6 +79,7 @@ Assessment.propTypes = {
   index: number.isRequired,
   setCurrentIndex: func.isRequired,
   saveQuestionPoint: func.isRequired,
+  setHeaderMsg: func.isRequired,
 };
 
 function mapStateToProps({ assessment, points }) {
@@ -94,6 +96,7 @@ function mapDispatchToProps(dispatch) {
       fetchQuestions,
       setCurrentIndex,
       saveQuestionPoint,
+      setHeaderMsg,
     },
     dispatch,
   );

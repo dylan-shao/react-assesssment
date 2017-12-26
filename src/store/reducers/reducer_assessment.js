@@ -1,4 +1,4 @@
-import { FETCH_QUESTIONS, CURRENT_INDEX, INDEX } from '../actions';
+import { FETCH_QUESTIONS, CURRENT_INDEX } from '../actions';
 
 const initialState = {
   index: -1,

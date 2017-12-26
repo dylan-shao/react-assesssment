@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { createUserName, clearData } from '../store/actions';
+import { createUserName, clearData, setHeaderMsg } from '../store/actions';
 import LoginForm from '../components/LoginForm';
 
 class Home extends Component {
   componentDidMount() {
     this.props.clearData();
+    this.props.setHeaderMsg('Welcome');
   }
 
   onFormSubmit = (e) => {
@@ -29,10 +30,18 @@ const { func } = PropTypes;
 Home.propTypes = {
   clearData: func.isRequired,
   createUserName: func.isRequired,
+  setHeaderMsg: func.isRequired,
 };
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ createUserName, clearData }, dispatch);
+  return bindActionCreators(
+    {
+      createUserName,
+      clearData,
+      setHeaderMsg,
+    },
+    dispatch,
+  );
 }
 
 export default connect(null, mapDispatchToProps)(Home);

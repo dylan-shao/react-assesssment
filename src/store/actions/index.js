@@ -5,6 +5,7 @@ export const FETCH_QUESTIONS = 'FETCH_QUESTIONS';
 export const QUESTION_POINTS = 'QUESTION_POINTS';
 export const CURRENT_INDEX = 'CURRENT_INDEX';
 export const CLEAR_DATA = 'CLEAR_DATA';
+export const HEADER_MESSAGE = 'HEADER_MESSAGE';
 
 export function createUserName(name) {
   return {
@@ -43,5 +44,12 @@ export function setCurrentIndex(index) {
   return {
     type: CURRENT_INDEX,
     payload: index,
+  };
+}
+
+export function setHeaderMsg(msg) {
+  return {
+    type: HEADER_MESSAGE,
+    payload: msg,
   };
 }
