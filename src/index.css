@@ -46,12 +46,12 @@ body {
   margin: 10px;
 }
 
-.btn-item:focus {
-  outline: none;
+.button-choosen {
   border: 3px solid green;
 }
 
 .choices button {
+  outline: none;
   color: gray;
   padding: 20px;
   min-width: 140px;

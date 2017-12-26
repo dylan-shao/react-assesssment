@@ -4,6 +4,11 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import ScoreResult from '../components/ScoreResult';
 
+/**
+ * this can be just a stateless component,
+ * I am tring to set every independent page as seperate container
+ * so it will be easy to add more features to the result page
+ */
 class Result extends Component {
   render() {
     return (

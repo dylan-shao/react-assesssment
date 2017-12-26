@@ -13,7 +13,8 @@ module.exports = {
       "specialLink": [ "to" ],
       "aspects": [ "noHref", "invalidHref", "preferButton" ]
     }],
-    "no-unused-expressions": "off"
+    "no-unused-expressions": "off",
+    "jsx-a11y/href-no-hash": "off"
   },
   "env": {
     "browser": true,

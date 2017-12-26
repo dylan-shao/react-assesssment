@@ -5,10 +5,9 @@ export const FETCH_QUESTIONS = 'FETCH_QUESTIONS';
 export const QUESTION_POINTS = 'QUESTION_POINTS';
 export const CURRENT_INDEX = 'CURRENT_INDEX';
 export const CLEAR_DATA = 'CLEAR_DATA';
-export const FOCUS_ID = 'FOCUS_ID';
 export const INDEX = 'INDEX';
 
-export function getUserName(name) {
+export function createUserName(name) {
   return {
     type: USERNAME,
     payload: name,
@@ -19,20 +18,6 @@ export function fetchQuestions() {
   return {
     type: FETCH_QUESTIONS,
     payload: questions,
-  };
-}
-
-export function initIndex() {
-  return {
-    type: INDEX,
-    payload: 0,
-  };
-}
-
-export function setFocusId(id) {
-  return {
-    type: FOCUS_ID,
-    payload: id,
   };
 }
 
@@ -55,7 +40,7 @@ export function clearData() {
   };
 }
 
-export function toggleCurrentIndex(index) {
+export function setCurrentIndex(index) {
   return {
     type: CURRENT_INDEX,
     payload: index,

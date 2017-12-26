@@ -1,38 +1,41 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import CommonHeader from '../components/CommonHeader';
 
 /**
  * this can be just a stateless component,
- * using a container component here is easy to add
- * more features to Header
+ * I am connecting to store and using as container component here is easy to add
+ * more features, functionalities to Header
  */
 class Header extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      headerMessage: 'Welcome',
-    };
-  }
-
   render() {
+    const { headerMessage, userName } = this.props;
+
+    // headerMessage should be coming from cq5 or other content management system
+    // but I just hard code it for convenience
     return (
-      <CommonHeader headerMessage={this.state.headerMessage} userName={this.props.userName} />
+      <header className="common-header">
+        <h1>{headerMessage} {userName}</h1>
+      </header>
     );
   }
 }
 
 Header.defaultProps = {
+  headerMessage: 'welcome',
   userName: '',
 };
 
+const { string } = PropTypes;
+
 Header.propTypes = {
-  userName: PropTypes.string,
+  headerMessage: string,
+  userName: string,
 };
 
 function mapStateToProps({ header }) {
   return {
+    headerMessage: header.headerMessage,
     userName: header.userName,
   };
 }

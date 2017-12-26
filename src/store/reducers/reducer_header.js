@@ -9,7 +9,7 @@ export default function (state = initialState, action) {
     case USERNAME:
       return { ...state, userName: action.payload };
     case CLEAR_DATA:
-      return { };
+      return { ...state, userName: '' };
     default:
       return state;
   }

@@ -1,4 +1,4 @@
-import { FETCH_QUESTIONS, CURRENT_INDEX, FOCUS_ID, INDEX } from '../actions';
+import { FETCH_QUESTIONS, CURRENT_INDEX, INDEX } from '../actions';
 
 const initialState = {
   index: -1,
@@ -12,8 +12,6 @@ export default function (state = initialState, action) {
       return { ...state, questions: payload.questions };
     case CURRENT_INDEX:
       return { ...state, index: payload };
-    case FOCUS_ID:
-      return { ...state, focusId: payload };
     case INDEX:
       return { ...state, index: payload };
     default:
