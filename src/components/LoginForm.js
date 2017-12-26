@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const LoginForm = props => (
+const LoginForm = (props) => (
   <div className="login-form">
     <h2>Please login to continue</h2>
     <form className="input-group" onSubmit={e => props.onFormSubmit(e)}>

@@ -15,6 +15,9 @@ class Assessment extends Component {
       this.props.fetchQuestions();
     }
     this.props.setCurrentIndex(0);
+
+    // headerMessage should be coming from cq5 or other content management system
+    // here I just set it here for convenience
     this.props.setHeaderMsg('Welcome');
   }
 
