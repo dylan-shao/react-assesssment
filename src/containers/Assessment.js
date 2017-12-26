@@ -17,11 +17,6 @@ class Assessment extends Component {
     this.props.setCurrentIndex(0);
   }
 
-  shouldComponentUpdate() {
-    // return this.props.index !== nextProps.index;
-    return true;
-  }
-
   prevClickHandler = () => {
     const prevIndex = Math.max(0, this.props.index - 1);
     this.props.setCurrentIndex(prevIndex);
@@ -85,10 +80,10 @@ Assessment.propTypes = {
   saveQuestionPoint: func.isRequired,
 };
 
-function mapStateToProps({ questions, points }) {
+function mapStateToProps({ assessment, points }) {
   return {
-    questions: questions.questions,
-    index: questions.index,
+    questions: assessment.questions,
+    index: assessment.index,
     points,
   };
 }

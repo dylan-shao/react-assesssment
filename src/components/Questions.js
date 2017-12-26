@@ -10,10 +10,10 @@ const Questions = (props) => {
     }
     return false;
   };
+
   const renderChoices = choice => (
     <li key={choice.cid}>
       <button
-        id={`choice-${choice.cid}`}
         className={isChoosen(choice.cid) ? 'button-choosen button-item' : 'button-item'}
         onClick={bindClick(questionId, choice)}
       >{choice.content}

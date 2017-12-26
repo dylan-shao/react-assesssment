@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 import headerReducer from './reducer_header';
-import questionsReducer from './reducer_questions';
+import assessmentReducer from './reducer_assessment';
 import reducerPoints from './reducer_points';
 
 const rootReducer = combineReducers({
   header: headerReducer,
-  questions: questionsReducer,
+  assessment: assessmentReducer,
   points: reducerPoints,
 });
 

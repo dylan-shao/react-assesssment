@@ -25,9 +25,10 @@ class Home extends Component {
   }
 }
 
+const { func } = PropTypes;
 Home.propTypes = {
-  clearData: PropTypes.func.isRequired,
-  createUserName: PropTypes.func.isRequired,
+  clearData: func.isRequired,
+  createUserName: func.isRequired,
 };
 
 function mapDispatchToProps(dispatch) {

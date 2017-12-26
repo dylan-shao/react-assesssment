@@ -27,14 +27,15 @@ Result.defaultProps = {
   points: {},
 };
 
+const { arrayOf, objectOf, object } = PropTypes;
 Result.propTypes = {
-  questions: PropTypes.arrayOf(PropTypes.object),
-  points: PropTypes.objectOf(PropTypes.object),
+  questions: arrayOf(object),
+  points: objectOf(object),
 };
 
-function mapStateToProps({ questions, points }) {
+function mapStateToProps({ assessment, points }) {
   return {
-    questions: questions.questions,
+    questions: assessment.questions,
     points,
   };
 }

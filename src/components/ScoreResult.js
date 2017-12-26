@@ -26,10 +26,12 @@ ScoreResult.defaultProps = {
   questions: [],
 };
 
+const { objectOf, arrayOf, number, object } = PropTypes;
+
 ScoreResult.propTypes = {
-  points: PropTypes.objectOf(PropTypes.object),
-  questions: PropTypes.arrayOf(PropTypes.object),
-  maxScore: PropTypes.number.isRequired,
+  points: objectOf(object),
+  questions: arrayOf(object),
+  maxScore: number.isRequired,
 };
 
 export default ScoreResult;

@@ -5,7 +5,6 @@ export const FETCH_QUESTIONS = 'FETCH_QUESTIONS';
 export const QUESTION_POINTS = 'QUESTION_POINTS';
 export const CURRENT_INDEX = 'CURRENT_INDEX';
 export const CLEAR_DATA = 'CLEAR_DATA';
-export const INDEX = 'INDEX';
 
 export function createUserName(name) {
   return {

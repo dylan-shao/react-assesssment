@@ -12,9 +12,11 @@ Steps.defaultProps = {
   totalSteps: 0,
 };
 
+const { number } = PropTypes;
+
 Steps.propTypes = {
-  step: PropTypes.number,
-  totalSteps: PropTypes.number,
+  step: number,
+  totalSteps: number,
 };
 
 export default Steps;

@@ -12,8 +12,6 @@ export default function (state = initialState, action) {
       return { ...state, questions: payload.questions };
     case CURRENT_INDEX:
       return { ...state, index: payload };
-    case INDEX:
-      return { ...state, index: payload };
     default:
       return state;
   }

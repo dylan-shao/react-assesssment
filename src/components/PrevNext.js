@@ -11,10 +11,11 @@ PrevNext.defaultProps = {
   type: '',
 };
 
+const { string, func } = PropTypes;
 PrevNext.propTypes = {
-  type: PropTypes.string,
-  clickHandler: PropTypes.func.isRequired,
-  value: PropTypes.string.isRequired,
+  type: string,
+  clickHandler: func.isRequired,
+  value: string.isRequired,
 };
 
 export default PrevNext;
