@@ -11,15 +11,18 @@ const Questions = (props) => {
     return false;
   };
 
-  const renderChoices = choice => (
-    <li key={choice.cid}>
-      <button
-        className={isChoosen(choice.cid) ? 'button-choosen button-item' : 'button-item'}
-        onClick={bindClick(questionId, choice)}
-      >{choice.content}
-      </button>
-    </li>
-  );
+  const renderChoices = (choice) => {
+    const btnClass = isChoosen(choice.cid) ? 'button-choosen button-item' : 'button-item';
+    return (
+      <li key={choice.cid}>
+        <button
+          className={btnClass}
+          onClick={bindClick(questionId, choice)}
+        >{choice.content}
+        </button>
+      </li>
+    );
+  };
 
   if (content && choices) {
     return (
