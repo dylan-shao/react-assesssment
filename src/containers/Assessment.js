@@ -8,6 +8,10 @@ import Questions from '../components/Questions';
 import PrevNext from '../components/PrevNext';
 import Steps from '../components/Steps';
 
+/**
+ * Assessment page
+ * container for Steps, PrevNext and Questions
+ */
 class Assessment extends Component {
   // simulate that the question is from the AJAX call
   componentDidMount() {
@@ -16,8 +20,10 @@ class Assessment extends Component {
     }
     this.props.setCurrentIndex(0);
 
-    // headerMessage should be coming from cq5 or other content management system
-    // here I just set it here for convenience
+    /**
+     * headerMessage should be coming from cq5 or other content management system
+     * here I just hard code it for convenience
+     */
     this.props.setHeaderMsg('Welcome');
   }
 
@@ -36,8 +42,8 @@ class Assessment extends Component {
     }
   }
 
-  chocieClickHandler = (obj) => {
-    this.props.saveQuestionPoint(obj);
+  chocieClickHandler = (arr) => {
+    this.props.saveQuestionPoint(arr);
   }
 
   render() {

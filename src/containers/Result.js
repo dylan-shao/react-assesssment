@@ -6,6 +6,10 @@ import PropTypes from 'prop-types';
 import ScoreResult from '../components/ScoreResult';
 import { setHeaderMsg } from '../store/actions';
 
+/**
+ * Result page
+ * container for ScoreResult
+ */
 class Result extends Component {
   componentDidMount() {
     this.props.setHeaderMsg('Below is your result');

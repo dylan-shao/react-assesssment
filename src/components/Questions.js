@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 const Questions = (props) => {
   const { questionId, points, content, choices, clickHandler } = props;
-  const bindClick = (id, select) => (clickHandler.bind(null, [id, select]));
   const isChoosen = (cid) => {
     if (points[questionId] && points[questionId].cid === cid) {
       return true;
@@ -17,7 +16,7 @@ const Questions = (props) => {
       <li key={choice.cid}>
         <button
           className={btnClass}
-          onClick={bindClick(questionId, choice)}
+          onClick={clickHandler.bind(null, [questionId, choice])}
         >{choice.content}
         </button>
       </li>

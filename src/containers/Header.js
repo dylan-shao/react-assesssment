@@ -8,4 +8,7 @@ function mapStateToProps({ header }) {
   };
 }
 
+/**
+ * container for Header
+ */
 export default connect(mapStateToProps)(Header);

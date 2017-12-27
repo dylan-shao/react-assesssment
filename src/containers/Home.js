@@ -5,12 +5,17 @@ import PropTypes from 'prop-types';
 import { createUserName, clearData, setHeaderMsg } from '../store/actions';
 import LoginForm from '../components/LoginForm';
 
+/**
+ * Home page
+ * container for LoginForm, used to login into app with username
+ */
 class Home extends Component {
   componentDidMount() {
     this.props.clearData();
     this.props.setHeaderMsg('Welcome');
   }
 
+  //save userName and do navigation
   onFormSubmit = (e) => {
     e.preventDefault();
     this.props.createUserName(e.target.username.value);
