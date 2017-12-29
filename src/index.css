@@ -64,11 +64,11 @@ body {
   border-radius: 5px;
   box-shadow: 1px 2px #888888;
 
-  background: whitesmoke; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(whitesmoke, lightgray); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(whitesmoke, lightgray); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(whitesmoke, lightgray); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(whitesmoke, lightgray); /* Standard syntax */
+  background: whitesmoke; 
+  background: -webkit-linear-gradient(whitesmoke, lightgray);
+  background: -o-linear-gradient(whitesmoke, lightgray); 
+  background: -moz-linear-gradient(whitesmoke, lightgray);
+  background: linear-gradient(whitesmoke, lightgray);
 }
 
 .questions {

@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { string } from 'prop-types';
 
 const Header = (props) => {
   const { headerMessage, userName } = props;
@@ -15,8 +15,6 @@ Header.defaultProps = {
   headerMessage: 'welcome',
   userName: '',
 };
-
-const { string } = PropTypes;
 
 Header.propTypes = {
   headerMessage: string,

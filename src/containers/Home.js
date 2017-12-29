@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import { func } from 'prop-types';
 import { createUserName, clearData, setHeaderMsg } from '../store/actions';
 import LoginForm from '../components/LoginForm';
 
@@ -31,7 +31,6 @@ class Home extends Component {
   }
 }
 
-const { func } = PropTypes;
 Home.propTypes = {
   clearData: func.isRequired,
   createUserName: func.isRequired,

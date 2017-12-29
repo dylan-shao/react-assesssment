@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { func } from 'prop-types';
 
 const LoginForm = props => (
   <div className="login-form">
@@ -17,7 +17,6 @@ const LoginForm = props => (
   </div>
 );
 
-const { func } = PropTypes;
 LoginForm.propTypes = {
   onFormSubmit: func.isRequired,
 };

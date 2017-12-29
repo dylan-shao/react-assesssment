@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { number } from 'prop-types';
 
 const Steps = ({ step, totalSteps }) => (
   <div className="question-steps">
@@ -11,8 +11,6 @@ Steps.defaultProps = {
   step: 0,
   totalSteps: 0,
 };
-
-const { number } = PropTypes;
 
 Steps.propTypes = {
   step: number,
