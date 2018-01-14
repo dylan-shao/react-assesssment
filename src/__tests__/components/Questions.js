@@ -1,7 +1,5 @@
 import React from 'react';
-import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import sinon from 'sinon';
 import renderer from 'react-test-renderer';
 import Questions from '../../components/Questions';
 
@@ -10,7 +8,7 @@ describe('<Question />', () => {
   let defaultProps;
   beforeEach(function(){
 	defaultProps = {
-		clickHandler: sinon.spy(),
+		clickHandler: jest.fn(),
 		questionId: 0,
 		content: 'content',
 		choices: [{cid: 1, content: 'choice1'}, 
@@ -29,22 +27,22 @@ describe('<Question />', () => {
   test('should render Loading if content and choices deoes not exist', function() {
   	defaultProps.content = '';
   	const wrapper = shallow(<Questions {...defaultProps}/>);
-  	expect(wrapper.text()).to.equal('Loading');
+  	expect(wrapper.text()).toEqual('Loading');
   });
 
   test('should contain h2 with content', () => {
   	const wrapper = shallow(<Questions {...defaultProps}/>);
-  	expect(wrapper.find('h2').text()).to.equal(defaultProps.content);
+  	expect(wrapper.find('h2').text()).toEqual(defaultProps.content);
   });
 
   test('should render a list with button based on choices', () => {
   	const wrapper = shallow(<Questions {...defaultProps}/>);
-  	expect(wrapper.find('li button').length).to.equal(defaultProps.choices.length);
+  	expect(wrapper.find('li button').length).toEqual(defaultProps.choices.length);
   });
 
   test('should trigger clickHandler when click the choices', () => {
   	const wrapper = shallow(<Questions {...defaultProps}/>);
   	wrapper.find('li button').first().simulate('click');
-  	expect(defaultProps.clickHandler.callCount).to.equal(1);
+  	expect(defaultProps.clickHandler).toHaveBeenCalledTimes(1);
   });
 });
