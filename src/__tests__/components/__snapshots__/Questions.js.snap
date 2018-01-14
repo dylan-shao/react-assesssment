@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Question /> renders correctly 1`] = `
+<div
+  className="questions clear-both"
+>
+  <h2
+    className="question-content"
+  >
+    content
+  </h2>
+  <div
+    className="choices"
+  >
+    <ul>
+      <li>
+        <button
+          className="button-item"
+          onClick={[Function]}
+        >
+          choice1
+        </button>
+      </li>
+      <li>
+        <button
+          className="button-item"
+          onClick={[Function]}
+        >
+          choice2
+        </button>
+      </li>
+      <li>
+        <button
+          className="button-item"
+          onClick={[Function]}
+        >
+          choice3
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
